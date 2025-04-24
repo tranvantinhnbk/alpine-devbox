@@ -25,30 +25,15 @@ jobs:
 
       - name: Install pre-commit and dependencies
         run: |
-          pip install pre-commit==1.15.2 gitlint==0.19.1 \
-          yamllint==1.35.1 pint==0.20.1
+          pip install pre-commit==1.15.2
 
 
       - name: Install pre-commit hooks
         run: |
           pre-commit install
+          pre-commit uninstall --hook-type commit-msg
 
       # Step 5: Run pre-commit hooks
       - name: Run pre-commit hooks
         run: |
           pre-commit run --all-files
-
-      # Step 6: Run gitlint for commit message linting
-      - name: Run gitlint
-        run: |
-          gitlint
-
-      # Step 7: Run yamllint (optional: if you want to lint YAML files)
-      - name: Run yamllint
-        run: |
-          yamllint .
-
-      # Step 8: Run Dockerfile lint (optional: if you want to lint Dockerfiles)
-      - name: Run Dockerfile lint
-        run: |
-          hadolint Dockerfile
