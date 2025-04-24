@@ -25,7 +25,7 @@ jobs:
 
       - name: Install pre-commit and dependencies
         run: |
-          pip install pre-commit==4.2.0 gitlint==0.19.1 \
+          pip install pre-commit==1.15.2 gitlint==0.19.1 \
           yamllint==1.37.0 pint==0.20.1
 
 
