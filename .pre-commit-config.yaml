@@ -1,0 +1,20 @@
+repos:
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.29.0  # ← use an older version known to work
+    hooks:
+      - id: yamllint
+        files: \.ya?ml$
+
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.10.0
+    hooks:
+      - id: hadolint
+        files: ^Dockerfile$
+
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.18.0
+    hooks:
+      - id: gitlint
+        stages: [commit-msg]
+        language: python
+        additional_dependencies: [gitlint]

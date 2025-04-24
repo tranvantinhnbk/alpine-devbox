@@ -1,0 +1,7 @@
+services:
+  alpine-ssh:
+    build: .
+    container_name: alpine-ssh
+    ports:
+      - "23:22"
+    restart: unless-stopped
