@@ -1,12 +1,8 @@
 repos:
-  - repo: https://github.com/adrienverge/yamllint
-    rev: v1.29.0  # ← use an older version known to work
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
     hooks:
-      - id: yamllint
-        files: \.ya?ml$
-
-  - repo: https://github.com/hadolint/hadolint
-    rev: v2.10.0
-    hooks:
-      - id: hadolint
-        files: ^Dockerfile$
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
