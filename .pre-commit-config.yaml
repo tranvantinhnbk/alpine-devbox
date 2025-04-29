@@ -10,11 +10,3 @@ repos:
     hooks:
       - id: hadolint
         files: ^Dockerfile$
-
-  - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.18.0
-    hooks:
-      - id: gitlint
-        stages: [commit-msg]
-        language: python
-        additional_dependencies: [gitlint]
